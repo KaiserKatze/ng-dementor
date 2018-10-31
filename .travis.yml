@@ -16,9 +16,6 @@ before_install:
   - node -v
   - npm -v
   - npm cache clean --force
-  - npm install -g @angular/cli
-  - npm install -g karma
-  - npm install -g protractor
 
 install:
   - npm install
