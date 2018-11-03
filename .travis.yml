@@ -25,7 +25,6 @@ install:
 # command to run tests
 script:
   - ng lint
-  - ng e2e
 
 matrix:
   fast_finish: true
