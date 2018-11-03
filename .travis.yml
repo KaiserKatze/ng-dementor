@@ -19,12 +19,7 @@ before_install:
 
 install:
   - npm install
-  # Reveal all the vulnerabilities
-  - npm audit
-  # Fix the vulnerabilities
-  - npm audit fix --force
-  # Double-check if all the vulunerabilities have been fixed
-  - npm audit
+  - ./npm-audit.sh
 
 # command to run tests
 script:
