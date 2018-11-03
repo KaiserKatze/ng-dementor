@@ -24,7 +24,7 @@ install:
 
 # command to run tests
 script:
-  - ng test
+  - ng lint
   - ng e2e
 
 matrix:
