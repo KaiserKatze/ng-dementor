@@ -16,23 +16,15 @@ before_install:
   - node -v
   - npm -v
   - npm cache clean --force
-  - npm install -g @angular/cli
-  - npm install -g karma
-  - npm install -g protractor
 
 install:
   - npm install
-  # Reveal all the vulnerabilities
-  - npm audit
-  # Fix the vulnerabilities
-  - npm audit fix --force
-  # Double-check if all the vulunerabilities have been fixed
-  - npm audit
+  - ng version
+  - chmod u+x npm-audit.sh && ./npm-audit.sh
 
 # command to run tests
 script:
-  - ng test
-  - ng e2e
+  - ng lint
 
 matrix:
   fast_finish: true
