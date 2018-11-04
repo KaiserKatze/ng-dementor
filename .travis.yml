@@ -18,6 +18,7 @@ before_install:
   - npm cache clean --force
 
 install:
+  - git diff --ignore-space-change head^
   - npm install
   - ng version
   - chmod u+x npm-audit.sh && ./npm-audit.sh
