@@ -3,7 +3,7 @@
 PATTERN="found 0 vulnerabilities"
 
 # Check the number of vulnerabilities
-npm audit | grep PATTERN;
+npm audit | grep PATTERN &> /dev/null;
 if [ $? -ne 0 ]; # found some vulnerabilities
 then
   # Fix the vulnerabilities
