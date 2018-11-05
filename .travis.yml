@@ -18,8 +18,13 @@ before_install:
   - npm cache clean --force
 
 install:
+  # https://ng-bootstrap.github.io/#/getting-started
+  - npm install --save @ng-bootstrap/ng-bootstrap
+  # Install NgDementor
   - npm install
+  # Check Angular version
   - ng version
+  # Audit and fix vulnerabilities
   - chmod u+x npm-audit.sh && ./npm-audit.sh
 
 # command to run tests
