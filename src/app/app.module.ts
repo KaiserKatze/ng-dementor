@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgBootstrapModule } from './modules/ng-bootstrap.module';
+import { NgMaterialModule } from './modules/ng-material.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NgBootstrapModule } from './modules/ng-bootstrap.module';
   ],
   imports: [
     BrowserModule,
-    NgBootstrapModule
+    NgBootstrapModule,
+    NgMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
