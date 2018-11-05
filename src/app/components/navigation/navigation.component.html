@@ -1,3 +1,10 @@
-<p>
-  navigation works!
-</p>
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownNavigation" ngbDropdownToggle>Navigation</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownNavigation">
+        <button *ngFor="let navItem of navItems" class="dropdown-item">{{ navItem.text }}</button>
+      </div>
+    </div>
+  </div>
+</div>
