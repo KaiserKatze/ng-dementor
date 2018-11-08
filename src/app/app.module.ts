@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgBootstrapModule } from './modules/ng-bootstrap.module';
 import { NgMaterialModule } from './modules/ng-material.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { NgMaterialModule } from './modules/ng-material.module';
     HttpClientModule,
     NgBootstrapModule,
     NgMaterialModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
