@@ -1,0 +1,3 @@
+#dropdownNavigation[aria-expanded="false"]:not(:hover) {
+  background-color: #fff;
+}
