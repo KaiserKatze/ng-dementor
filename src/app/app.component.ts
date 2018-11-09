@@ -15,13 +15,9 @@ export class AppComponent {
   };
 
   constructor() {
-    let from: number = this.copyright.from;
-    let now: Date = new Date();
-    let toyear: number = now.getFullYear();
-    if (toyear > from) {
-      this.copyright.period = `${from}-${toyear}`;
-    } else {
-      this.copyright.period = from.toString();
-    }
+    const from: number = this.copyright.from;
+    const now = new Date();
+    const toyear = now.getFullYear();
+    this.copyright.period = from + (toyear > from ? `-${toyear}` : '');
   }
 }
