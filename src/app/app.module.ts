@@ -9,6 +9,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { NgBootstrapModule } from './modules/ng-bootstrap.module';
 import { NgMaterialModule } from './modules/ng-material.module';
 import { AppRoutingModule } from './modules/app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './modules/app-routing.module';
     NgBootstrapModule,
     NgMaterialModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
