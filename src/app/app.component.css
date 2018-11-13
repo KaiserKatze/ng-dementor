@@ -6,9 +6,6 @@
 footer {
   position: fixed;
   bottom: 0;
-  width: 100vw;
-  background-color: grey;
-  font-family: "Times New Roman";
 }
 
 .container-table {
@@ -19,4 +16,8 @@ footer {
 .vertical-center-row {
   display: table-cell;
   vertical-align: middle;
+}
+
+.copyright.claimant {
+  font-style: italic;
 }

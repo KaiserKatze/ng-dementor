@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header class="container-fluid">
-  <nav class="navbar navbar-dark bg-dark">
+<header class="container-fluid bg-primary">
+  <nav class="navbar navbar-dark">
     <span class="navbar-brand">
       <img class="icon" src="assets/images/icon.png">
     </span>
@@ -19,6 +19,11 @@
   </router-outlet>
 </main>
 
-<footer>
-  <div>Copyright&nbsp;&copy;&nbsp;<span class="copyright period">{{copyright.period}}</span>&nbsp;<span class="copyright claimant">{{copyright.claimant}}</span>.&nbsp;All rights reserved.</div>
+<footer class="container-fluid bg-primary">
+  <div class="text-light">
+    <span>Copyright&nbsp;&copy;&nbsp;</span>
+    <span class="copyright period">{{copyright.period}}&nbsp;</span>
+    <span class="copyright claimant">{{copyright.claimant}}</span>
+    <span>. All rights reserved.</span>
+  </div>
 </footer>
