@@ -3,6 +3,10 @@
   height: 40px;
 }
 
+main {
+  overflow-y: scroll;
+}
+
 footer {
   position: fixed;
   bottom: 0;
