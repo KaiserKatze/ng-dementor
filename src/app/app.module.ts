@@ -8,11 +8,13 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { NgBootstrapModule } from './modules/ng-bootstrap.module';
 import { NgMaterialModule } from './modules/ng-material.module';
 import { AppRoutingModule } from './modules/app-routing.module';
+import { NavigationListComponent } from './components/navigation/navigation-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    NavigationListComponent
   ],
   imports: [
     BrowserModule,
