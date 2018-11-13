@@ -30,3 +30,13 @@ footer {
   background-color: grey;
   font-family: "Times New Roman";
 }
+
+.container-table {
+  display: table;
+  height: 100vw;
+}
+
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
