@@ -10,13 +10,15 @@ import { NgMaterialModule } from './modules/ng-material.module';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { NavigationListComponent } from './components/navigation/navigation-list.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { FuturesComponent } from './components/futures/futures.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     NavigationListComponent,
-    LoadingComponent
+    LoadingComponent,
+    FuturesComponent
   ],
   imports: [
     BrowserModule,
