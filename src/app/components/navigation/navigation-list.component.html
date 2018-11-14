@@ -17,6 +17,7 @@
           class="dropdown-menu"
           [attr.aria-labelledby]="navItem.id">
         <a *ngFor="let navMenuEntry of navMenu"
+            [routerLink]="navMenuEntry.text"
             class="dropdown-item">{{navMenuEntry.text}}</a>
       </div>
     </div>
@@ -25,6 +26,7 @@
   <ng-template #content_normal>
     <div>
       <a [class.active]="navItem == selectedItem"
+          [routerLink]="navItem.text"
           class="nav-link">{{navItem.text | titlecase}}</a>
     </div>
   </ng-template>
