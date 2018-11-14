@@ -7,11 +7,6 @@ main {
   overflow-y: scroll;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-}
-
 .container-table {
   display: table;
   height: 100vh;
