@@ -13,11 +13,19 @@ export class NavigationListComponent implements OnInit {
   navItems: {}[];
 
   constructor() {
-    this.navItems = AppRoutes.map((value: Route) => {
+    // Data structure:
+    // `type`:  0 represents item
+    //          1 represents dropdown menu
+    const navItems = AppRoutes.map((value: Route) => {
       return {
         text: value.path,
+        type: 1,
       };
     });
+    this.navItems = [{
+      text: 'home',
+      type: 0,
+    }].concat(navItems);
   }
 
   ngOnInit() {

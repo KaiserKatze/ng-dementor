@@ -1,17 +1,30 @@
 <ul class="navbar-nav mr-auto">
-  <!-- Automatically illustrates the list of <li> tags //-->
-  <li ngbDropdown
-      *ngFor="let navItem of navItems"
-      class="nav-item dropdown">
-    <a ngbDropdownToggle
-        class="nav-link dropdown-toggle"
-        [id]="navItem.id"
-        href="#">{{navItem.text | titlecase}}</a>
-    <div ngbDropdownMenu
-        class="dropdown-menu"
-        [attr.aria-labelledby]="navItem.id">
-      <a *ngFor="let navMenuEntry of navMenu"
-          class="dropdown-item">{{navMenuEntry.text}}</a>
+<!-- Automatically illustrates the list of <li> tags //-->
+<li *ngFor="let navItem of navItems">
+
+  <div *ngIf="navItem.type > 0; then content_dropdown else content_normal"></div>
+
+  <ng-template #content_dropdown>
+    <div ngbDropdown
+        class="nav-item dropdown">
+      <a ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          [id]="navItem.id"
+          href="#">{{navItem.text | titlecase}}</a>
+      <div ngbDropdownMenu
+          class="dropdown-menu"
+          [attr.aria-labelledby]="navItem.id">
+        <a *ngFor="let navMenuEntry of navMenu"
+            class="dropdown-item">{{navMenuEntry.text}}</a>
+      </div>
     </div>
-  </li>
+  </ng-template>
+
+  <ng-template #content_normal>
+    <div class="nav-item">
+      <a class="nav-link">{{navItem.text | titlecase}}</a>
+    </div>
+  </ng-template>
+
+</li>
 </ul>
