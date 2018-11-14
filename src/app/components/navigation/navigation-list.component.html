@@ -1,7 +1,8 @@
 <ul class="navbar-nav mr-auto">
 <!-- Automatically illustrates the list of <li> tags //-->
 <li *ngFor="let navItem of navItems"
-    class="nav-item">
+    class="nav-item"
+    [class.active]="navItem == selectedItem">
 
   <div *ngIf="navItem.type > 0; then content_dropdown else content_normal"></div>
 

@@ -11,6 +11,7 @@ import { routes as AppRoutes } from '../../modules/app-routing.module';
 export class NavigationListComponent implements OnInit {
 
   navItems: {}[];
+  selectedIndex: number = 0;
 
   constructor() {
     // Data structure:
@@ -29,6 +30,10 @@ export class NavigationListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  get selectedItem() {
+    return this.navItems[this.selectedIndex];
   }
 
 }
