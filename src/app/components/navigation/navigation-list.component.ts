@@ -41,6 +41,8 @@ class NavItem {
     // `type`:  0 represents item;
     //          1 represents dropdown menu.
     public type: number,
+    // `menu`:  used in template.
+    public menu: NavItem[] = null,
   ) {}
 
 }
