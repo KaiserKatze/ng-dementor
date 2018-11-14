@@ -1,6 +1,17 @@
 <ul class="navbar-nav mr-auto">
-  <li *ngFor="let navItem of navItems"
-      class="nav-item">
-    <a href="">{{ navItem.text }}</a>
+  <!-- Automatically illustrates the list of <li> tags //-->
+  <li ngbDropdown
+      *ngFor="let navItem of navItems"
+      class="nav-item dropdown">
+    <a ngbDropdownToggle
+        class="nav-link dropdown-toggle"
+        [id]="navItem.id"
+        href="#">{{navItem.text}}</a>
+    <div ngbDropdownMenu
+        class="dropdown-menu"
+        [attr.aria-labelledby]="navItem.id">
+      <a *ngFor="let navMenuEntry of navMenu"
+          class="dropdown-item">{{navMenuEntry.text}}</a>
+    </div>
   </li>
 </ul>
