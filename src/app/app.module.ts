@@ -11,6 +11,7 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { NavigationListComponent } from './components/navigation/navigation-list.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { FuturesComponent } from './components/futures/futures.component';
+import { CurrenciesComponent } from './components/currencies/currencies.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FuturesComponent } from './components/futures/futures.component';
     NavigationComponent,
     NavigationListComponent,
     LoadingComponent,
-    FuturesComponent
+    FuturesComponent,
+    CurrenciesComponent
   ],
   imports: [
     BrowserModule,
