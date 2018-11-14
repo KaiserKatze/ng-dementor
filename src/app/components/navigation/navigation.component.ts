@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
-
-import { routes as AppRoutes } from '../../modules/app-routing.module';
 
 @Component({
   selector: 'app-navigation',
@@ -10,15 +7,7 @@ import { routes as AppRoutes } from '../../modules/app-routing.module';
 })
 export class NavigationComponent implements OnInit {
 
-  navItems: {}[];
-
-  constructor() {
-    this.navItems = AppRoutes.map((value: Route) => {
-      return {
-        text: value.path,
-      };
-    });
-  }
+  constructor() { }
 
   ngOnInit() {
   }

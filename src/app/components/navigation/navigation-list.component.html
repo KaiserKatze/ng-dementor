@@ -1,3 +1,6 @@
-<p>
-  navigation-list works!
-</p>
+<ul class="navbar-nav mr-auto">
+  <li *ngFor="let navItem of navItems"
+      class="nav-item">
+    <a href="">{{ navItem.text }}</a>
+  </li>
+</ul>
