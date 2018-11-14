@@ -43,6 +43,9 @@ class NavItem {
     public type: number,
     // `menu`:  used in template.
     public menu: NavItem[] = null,
-  ) {}
+    // `id`:    used in template.
+    public id: string = text,
+  ) {
+  }
 
 }
