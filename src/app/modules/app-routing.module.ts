@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { FuturesComponent } from '../components/futures/futures.component';
+import { CurrenciesComponent } from '../components/currencies/currencies.component';
+
+
+export const routes: Routes = [{
+  path: 'futures',
+  component: FuturesComponent,
+}, {
+  path: 'currencies',
+  component: CurrenciesComponent,
+}];
 
 @NgModule({
   imports: [
