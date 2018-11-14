@@ -27,7 +27,10 @@ export class NavigationListComponent implements OnInit {
 
   set selectedItem(navItem: NavItem) {
     if (navItem) {
-      this.selectedIndex = this.navItems.indexOf(navItem);
+      const index = this.navItems.indexOf(navItem);
+      if (index >= 0) {
+        this.selectedIndex = index;
+      }
     }
   }
 
