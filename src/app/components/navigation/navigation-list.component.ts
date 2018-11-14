@@ -10,23 +10,12 @@ import { routes as AppRoutes } from '../../modules/app-routing.module';
 })
 export class NavigationListComponent implements OnInit {
 
-  navItems: {}[];
+  navItems: NavItem[];
   selectedIndex: number = 0;
 
   constructor() {
-    // Data structure:
-    // `type`:  0 represents item
-    //          1 represents dropdown menu
-    const navItems = AppRoutes.map((value: Route) => {
-      return {
-        text: value.path,
-        type: 1,
-      };
-    });
-    this.navItems = [{
-      text: 'home',
-      type: 0,
-    }].concat(navItems);
+    const navItems = AppRoutes.map((value: Route) => new NavItem(value.path, 1));
+    this.navItems = [new NavItem('home', 0)].concat(navItems);
   }
 
   ngOnInit() {
@@ -35,5 +24,17 @@ export class NavigationListComponent implements OnInit {
   get selectedItem() {
     return this.navItems[this.selectedIndex];
   }
+
+}
+
+class NavItem {
+
+  constructor(
+    // `text`:  used in template.
+    public text: string,
+    // `type`:  0 represents item;
+    //          1 represents dropdown menu.
+    public type: number,
+  ) {}
 
 }
