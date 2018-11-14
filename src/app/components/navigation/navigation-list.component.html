@@ -12,7 +12,7 @@
           [class.active]="navItem == selectedItem"
           class="nav-link dropdown-toggle"
           [id]="navItem.id"
-          href="#">{{navItem.text | titlecase}}</a>
+          href="javascript:void(0);">{{navItem.text | titlecase}}</a>
       <div ngbDropdownMenu
           class="dropdown-menu"
           [attr.aria-labelledby]="navItem.id">
