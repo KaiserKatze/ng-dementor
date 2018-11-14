@@ -1,8 +1,7 @@
 <ul class="navbar-nav mr-auto">
 <!-- Automatically illustrates the list of <li> tags //-->
 <li *ngFor="let navItem of navItems"
-    class="nav-item"
-    [class.active]="navItem == selectedItem">
+    class="nav-item">
 
   <div *ngIf="navItem.type > 0; then content_dropdown else content_normal"></div>
 
@@ -10,6 +9,7 @@
     <div ngbDropdown
         class="dropdown">
       <a ngbDropdownToggle
+          [class.active]="navItem == selectedItem"
           class="nav-link dropdown-toggle"
           [id]="navItem.id"
           href="#">{{navItem.text | titlecase}}</a>
@@ -24,7 +24,8 @@
 
   <ng-template #content_normal>
     <div>
-      <a class="nav-link">{{navItem.text | titlecase}}</a>
+      <a [class.active]="navItem == selectedItem"
+          class="nav-link">{{navItem.text | titlecase}}</a>
     </div>
   </ng-template>
 
