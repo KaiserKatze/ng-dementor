@@ -2,16 +2,6 @@ main {
   overflow-y: scroll;
 }
 
-.container-table {
-  display: table;
-  height: 100vh;
-}
-
-.vertical-center-row {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 .copyright.claimant {
   font-style: italic;
 }
