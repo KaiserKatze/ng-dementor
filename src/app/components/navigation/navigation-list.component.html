@@ -18,7 +18,7 @@
           [attr.aria-labelledby]="navItem.id">
         <a *ngFor="let navMenuEntry of navItem.menu"
             [routerLink]="navMenuEntry.link"
-            class="dropdown-item">{{navMenuEntry.text}}</a>
+            class="dropdown-item">{{navMenuEntry.text | titlecase}}</a>
       </div>
     </div>
   </ng-template>
