@@ -60,9 +60,11 @@ class NavItem {
     return routes.map((value: Route) => {
       const path = value.path;
       const type = 1;
-      const menu = value.children ? NavItem.convert(value.children, link) : null;
-      link += path;
-      return new NavItem(path, type, menu, link);
+      const newlink = link + '/' + path;
+      const menu = value.children ? NavItem.convert(value.children, newlink) : null;
+      const result = new NavItem(path, type, menu, newlink);
+
+      return result;
     });
   }
 
