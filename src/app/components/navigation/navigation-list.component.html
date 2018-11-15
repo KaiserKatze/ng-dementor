@@ -16,7 +16,7 @@
       <div ngbDropdownMenu
           class="dropdown-menu"
           [attr.aria-labelledby]="navItem.id">
-        <a *ngFor="let navMenuEntry of menu"
+        <a *ngFor="let navMenuEntry of navItem.menu"
             [routerLink]="navMenuEntry.text"
             class="dropdown-item">{{navMenuEntry.text}}</a>
       </div>
