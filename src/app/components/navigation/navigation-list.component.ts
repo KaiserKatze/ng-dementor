@@ -46,6 +46,8 @@ class NavItem {
     public type: number,
     // `menu`:  used in template.
     public menu: NavItem[] = null,
+    // `link`:  used in template.
+    public link: string = null,
     // `id`:    used in template.
     public id: string = text,
   ) {
@@ -54,15 +56,14 @@ class NavItem {
   /**
   Convert a Route array into a NavItem array.
   */
-  static convert(routes: Routes): NavItem[] {
-    return routes.map((value: Route) => new NavItem(
-      // text
-      value.path,
-      // type
-      1,
-      // menu
-      value.children ? NavItem.convert(value.children) : null,
-    ));
+  static convert(routes: Routes, link: string = ''): NavItem[] {
+    return routes.map((value: Route) => {
+      const path = value.path;
+      const type = 1;
+      const menu = value.children ? NavItem.convert(value.children, link) : null;
+      link += path;
+      return new NavItem(path, type, menu, link);
+    });
   }
 
 }
