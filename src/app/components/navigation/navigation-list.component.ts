@@ -61,7 +61,7 @@ class NavItem {
       // type
       1,
       // menu
-      NavItem.convert(value.children),
+      value.children ? NavItem.convert(value.children) : null,
     ));
   }
 
