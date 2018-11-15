@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
+import { Route, Routes } from '@angular/router';
 
 import { routes as AppRoutes } from '../../modules/app-routing.module';
 
@@ -14,7 +14,7 @@ export class NavigationListComponent implements OnInit {
   selectedIndex: number = 0;
 
   constructor() {
-    const navItems = AppRoutes.map((value: Route) => new NavItem(value.path, 1));
+    const navItems = NavItem.convert(AppRoutes);
     this.navItems = [new NavItem('home', 0)].concat(navItems);
   }
 
@@ -49,6 +49,20 @@ class NavItem {
     // `id`:    used in template.
     public id: string = text,
   ) {
+  }
+
+  /**
+  Convert a Route array into a NavItem array.
+  */
+  static convert(routes: Routes): NavItem[] {
+    return routes.map((value: Route) => new NavItem(
+      // text
+      value.path,
+      // type
+      1,
+      // menu
+      NavItem.convert(value.children),
+    ));
   }
 
 }
