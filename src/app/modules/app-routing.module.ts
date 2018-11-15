@@ -9,6 +9,11 @@ export const routes: Routes = [{
   path: 'futures',
   component: FuturesComponent,
   resolve: TargetResolverService,
+  children: [{
+    path: 'shfe',
+    component: FuturesComponent,
+    resolve: TargetResolverService,
+  }],
 }, {
   path: 'currencies',
   component: CurrenciesComponent,
