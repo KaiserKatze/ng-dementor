@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Routes } from '@angular/router';
-
-import { routes as AppRoutes } from '../../modules/app-routing.module';
 
 @Component({
   selector: 'app-navigation-list',
@@ -14,8 +11,10 @@ export class NavigationListComponent implements OnInit {
   selectedIndex: number = 0;
 
   constructor() {
-    const navItems = NavItem.convert(AppRoutes);
-    this.navItems = [new NavItem('home', 0)].concat(navItems);
+    this.navItems = [new NavItem('home', 0)].concat([
+      NavItem.createRootNavItem('futures', ['shfe']),
+      NavItem.createRootNavItem('currencies'),
+    ]);
   }
 
   ngOnInit() {
@@ -56,16 +55,15 @@ class NavItem {
   /**
   Convert a Route array into a NavItem array.
   */
-  static convert(routes: Routes, link: string = ''): NavItem[] {
-    return routes.map((value: Route) => {
-      const path = value.path;
-      const type = 1;
-      const newlink = link + '/' + path;
-      const menu = value.children ? NavItem.convert(value.children, newlink) : null;
-      const result = new NavItem(path, type, menu, newlink);
-
-      return result;
-    });
+  static createRootNavItem(
+    text: string,
+    menu: string[] = null,
+  ): NavItem {
+    const nimenu: NavItem[] = menu ? menu.map((entry: string) => {
+      const link = text + '/' + entry;
+      return new NavItem(entry, 0, null, link);
+    }) : null;
+    return new NavItem(text, 1, nimenu);
   }
 
 }
