@@ -7,8 +7,6 @@ import { TargetResolverService } from '../services/target-resolver.service';
 
 export const routes: Routes = [{
   path: 'futures',
-  component: FuturesComponent,
-  resolve: TargetResolverService,
   children: [{
     path: 'shfe',
     component: FuturesComponent,
